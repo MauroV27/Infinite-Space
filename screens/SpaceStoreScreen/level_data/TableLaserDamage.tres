@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://screens/SpaceStoreScreen/level_data/base_data.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+data_table = [ {
+"price": 0,
+"value": 1
+}, {
+"price": 150,
+"value": 2
+}, {
+"price": 300,
+"value": 3
+}, {
+"price": 550,
+"value": 4
+} ]

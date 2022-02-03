@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://screens/SpaceStoreScreen/ShopItemProperties.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Reload speed"
+item_id = "reloadLaser"
+tool_tip_text = "Reduce the time speed for reloading the cannon"
+has_level = true

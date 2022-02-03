@@ -1,0 +1,183 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://screens/SpaceStoreScreen/ShopElement.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.180392, 0.172549, 0.262745, 1 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id=6]
+Button/colors/font_color = Color( 0.341176, 0.470588, 0.152941, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_focus = Color( 0.341176, 0.470588, 0.152941, 1 )
+Button/colors/font_color_hover = Color( 0.180392, 0.172549, 0.262745, 1 )
+Button/colors/font_color_pressed = Color( 0.341176, 0.470588, 0.152941, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = SubResource( 14 )
+Button/styles/focus = SubResource( 11 )
+Button/styles/hover = SubResource( 12 )
+Button/styles/normal = SubResource( 12 )
+Button/styles/pressed = SubResource( 12 )
+Label/fonts/font = SubResource( 5 )
+Panel/styles/panel = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=10]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0.858824, 0.858824, 0.858824, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[node name="ShopElement" type="Control" groups=["SHOP"]]
+margin_right = 200.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 200, 240 )
+theme = SubResource( 6 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 180, 200 )
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Name" type="Label" parent="."]
+anchor_right = 1.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 2 )
+text = "NAME"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -50.0
+margin_top = -55.0
+margin_right = 50.0
+margin_bottom = -11.0
+custom_fonts/font = SubResource( 3 )
+text = "$100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -60.0
+margin_top = -60.0
+margin_right = 60.0
+margin_bottom = 60.0
+mouse_filter = 2
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.5
+margin_top = -80.0
+margin_right = 35.5
+margin_bottom = -58.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 4 )
+text = "LEVEL :1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+margin_right = 200.0
+margin_bottom = 19.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="PopupPanel"]
+margin_right = 200.0
+margin_bottom = 27.0
+size_flags_horizontal = 2
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_styles/normal = SubResource( 10 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlockPanel" type="Panel" parent="."]
+visible = false
+modulate = Color( 1, 0, 0, 0.25098 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_Item_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Item_mouse_exited"]
+[connection signal="pressed" from="BuyButton" to="." method="_on_BuyButton_pressed"]

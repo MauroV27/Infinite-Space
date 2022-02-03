@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/entities/Asteroid/AsteroidType.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+life = 1
+scores = 10
+size = 1
+color = Color( 0.921569, 0.741176, 0.101961, 1 )
+speed_increase = 1.2

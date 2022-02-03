@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://screens/SpaceStoreScreen/ShopItemProperties.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Laser Damage"
+item_id = "laserDamage"
+tool_tip_text = "Increase the damage that laser does"
+has_level = true

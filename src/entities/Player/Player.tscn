@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://src/entities/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://src/entities/Player/HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/sounds/sfx/sfx_laser2.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/sounds/sfx/damage sound effect.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/sfx/483598__raclure__wrong.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/sprites/Player/player.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.8 )
+colors = PoolColorArray( 1, 0.705882, 0.360784, 1, 1, 0.972549, 0.360784, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.381818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.5
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 20, 0 )
+initial_velocity = 35.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 5.0
+angle = 100.0
+angle_random = 1.0
+scale = 4.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "damage"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.862745, 0, 0, 1 ), Color( 0.784314, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "player_invulnerable_finished"
+} ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, 6 )
+amount = 12
+process_material = SubResource( 2 )
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitBox"]
+visible = false
+polygon = PoolVector2Array( -16, 16, 16, 16, 0, -16 )
+
+[node name="HUD" parent="." instance=ExtResource( 2 )]
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ShootFailed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 120, 120 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/damage = SubResource( 9 )
+
+[connection signal="energy_per_shoot_change" from="." to="HUD" method="update_energy_per_shoot"]
+[connection signal="life_change" from="." to="HUD" method="_on_Player_life_change"]
+[connection signal="scores_change" from="." to="HUD" method="_on_Player_scores_change"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]

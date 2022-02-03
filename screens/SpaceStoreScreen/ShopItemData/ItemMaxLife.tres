@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://screens/SpaceStoreScreen/ShopItemProperties.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Max Life"
+item_id = "maxLife"
+tool_tip_text = "Increase the max life of player. This not give a life to player, just increase the max possible."
+has_level = true

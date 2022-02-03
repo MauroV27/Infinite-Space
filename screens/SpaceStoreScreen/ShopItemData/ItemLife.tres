@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://screens/SpaceStoreScreen/ShopItemProperties.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Life"
+item_id = "life"
+tool_tip_text = "Give 1 more life to player"
+has_level = false
