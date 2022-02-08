@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://entities/Asteroid/AsteroidType.gd" type="Script" id=1]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.416667, 0.163636 ), 1.04132, 1.04132, 0, 0, Vector2( 0.811111, 0.845455 ), -1.12987, -1.12987, 0, 0, Vector2( 1, 0.736364 ), 0.0, 0.0, 0, 0 ]
+
+[resource]
+script = ExtResource( 1 )
+life = 10
+scores = 85
+size = 3.5
+color = Color( 0.921569, 0.101961, 0.737255, 1 )
+speed_increase = 0.8
+probability = SubResource( 1 )
