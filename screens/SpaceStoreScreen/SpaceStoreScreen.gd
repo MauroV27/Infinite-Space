@@ -81,7 +81,7 @@ func increase_laser_damage(price:int,updateValue:int) -> void:
 func increase_max_life(price:int, updateValue:int) -> void:
 	if can_buy(price):
 		player.increase_status("max_life", updateValue)
-		player.update_life(0)
+		player.update_life(1)
 		update_scores(price)
 
 func reduce_energy_per_laser(price:int, updateValue:int) -> void:

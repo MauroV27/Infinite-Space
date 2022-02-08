@@ -7,7 +7,7 @@ export var data : Resource = BaseData
 export var item_icon : Texture = null
 
 var level_value : int = 0
-var price : int = 250
+var price : int = 500
 var updateValue: int = 1
 
 signal button_pressed(name, price, value)

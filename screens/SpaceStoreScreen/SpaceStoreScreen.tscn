@@ -102,8 +102,9 @@ margin_left = -340.0
 margin_top = -250.0
 margin_right = 340.0
 margin_bottom = 250.0
+grow_horizontal = 2
 custom_constants/vseparation = 35
-custom_constants/hseparation = 40
+custom_constants/hseparation = 45
 columns = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -114,15 +115,15 @@ item = ExtResource( 11 )
 item_icon = ExtResource( 16 )
 
 [node name="BuyMaxLife" parent="ShopSpace" instance=ExtResource( 3 )]
-margin_left = 240.0
-margin_right = 440.0
+margin_left = 245.0
+margin_right = 445.0
 item = ExtResource( 5 )
 data = ExtResource( 10 )
 item_icon = ExtResource( 15 )
 
 [node name="BuyMoveSpeed" parent="ShopSpace" instance=ExtResource( 3 )]
-margin_left = 480.0
-margin_right = 680.0
+margin_left = 490.0
+margin_right = 690.0
 item = ExtResource( 6 )
 data = ExtResource( 13 )
 item_icon = ExtResource( 18 )
@@ -135,18 +136,18 @@ data = ExtResource( 14 )
 item_icon = ExtResource( 20 )
 
 [node name="BuyEnergySpeed" parent="ShopSpace" instance=ExtResource( 3 )]
-margin_left = 240.0
+margin_left = 245.0
 margin_top = 275.0
-margin_right = 440.0
+margin_right = 445.0
 margin_bottom = 515.0
 item = ExtResource( 8 )
 data = ExtResource( 12 )
 item_icon = ExtResource( 19 )
 
 [node name="BuyEnergyTime" parent="ShopSpace" instance=ExtResource( 3 )]
-margin_left = 480.0
+margin_left = 490.0
 margin_top = 275.0
-margin_right = 680.0
+margin_right = 690.0
 margin_bottom = 515.0
 item = ExtResource( 9 )
 data = ExtResource( 7 )

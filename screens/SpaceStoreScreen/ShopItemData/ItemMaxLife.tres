@@ -6,5 +6,5 @@
 script = ExtResource( 1 )
 item_name = "Max Life"
 item_id = "maxLife"
-tool_tip_text = "Increase the max life of player. This not give a life to player, just increase the max possible."
+tool_tip_text = "Increases player's maximum lives."
 has_level = true

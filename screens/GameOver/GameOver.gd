@@ -20,6 +20,8 @@ func count_distance(distance:float) -> void:
 	
 	if distance > record:
 		var new_record = {"record": int(distance)}
+		$new_record.visible = true
+		
 		print("Novo recorde: ", new_record)
 		SaveAndLoad.save_data(new_record)
 

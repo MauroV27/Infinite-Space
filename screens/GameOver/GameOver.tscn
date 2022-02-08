@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
@@ -23,6 +23,11 @@ font_data = ExtResource( 2 )
 size = 48
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 22
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
 [node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,6 +41,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.145098, 0.137255, 0.211765, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="GameOver" type="Label" parent="."]
 anchor_left = 0.5
@@ -79,7 +87,7 @@ margin_left = -162.5
 margin_top = -40.0
 margin_right = 162.5
 margin_bottom = -2.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 0.972549, 0.360784, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Distance: 000000"
 align = 1
@@ -116,6 +124,24 @@ text = "Back to menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="new_record" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 84.0
+margin_top = -9.0
+margin_right = 222.0
+margin_bottom = 53.0
+rect_rotation = -20.0
+custom_colors/font_color = Color( 0.741176, 1, 0.360784, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "new record!!!"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]
