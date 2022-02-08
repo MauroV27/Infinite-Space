@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "AsteroidType",
 "language": "GDScript",
-"path": "res://src/entities/Asteroid/AsteroidType.gd"
+"path": "res://entities/Asteroid/AsteroidType.gd"
 }, {
 "base": "Resource",
 "class": "BaseData",
@@ -34,6 +34,7 @@ _global_script_class_icons={
 
 config/name="Infinite Space"
 run/main_scene="res://screens/Menu/Menu.tscn"
+boot_splash/image="res://assets/loading_screen.png"
 boot_splash/bg_color=Color( 0.180392, 0.172549, 0.262745, 1 )
 config/icon="res://icon.png"
 
