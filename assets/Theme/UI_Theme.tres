@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://assets/fonts/Roboto-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Roboto-Bold.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=11]
 font_data = ExtResource( 1 )
@@ -17,6 +18,10 @@ draw_center = false
 [sub_resource type="StyleBoxFlat" id=10]
 draw_center = false
 
+[sub_resource type="DynamicFont" id=13]
+size = 52
+font_data = ExtResource( 2 )
+
 [resource]
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -29,3 +34,12 @@ Button/styles/focus = SubResource( 12 )
 Button/styles/hover = SubResource( 7 )
 Button/styles/normal = SubResource( 8 )
 Button/styles/pressed = SubResource( 10 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/colors/font_outline_modulate = Color( 0.619608, 0.694118, 0.509804, 1 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = SubResource( 13 )
+Label/styles/normal = null
