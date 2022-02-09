@@ -46,8 +46,6 @@ SaveAndLoad="*res://SaveAndLoad.gd"
 
 window/size/width=1280
 window/size/height=720
-window/size/test_width=640
-window/size/test_height=360
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
